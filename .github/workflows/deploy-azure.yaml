@@ -3,7 +3,7 @@ name: FastApi build and deploy to Azure Web app
 env:
   AZURE_WEBAPP_NAME: test-fastapi-app-kokeitor
   PYTHON_VERSION: '3.11' 
-  STARTUP_COMMAND: 'gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.main:app --bind 0.0.0.0:$PORT'
+  STARTUP_COMMAND: 'uvicorn api.main:app --reload'
   WORKING_DIRECTORY: '.'
 
 on:
