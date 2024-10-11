@@ -28,4 +28,13 @@ az webapp create --name MY_WEBAPP_NAME --plan MY_APP_SERVICE_PLAN --resource-gro
 ```
 app name : test-fastapi-app-kokeitor
 
+deployment center on azure abd follow steps
+configure yaml github actions created by azure on your repo
+checkout secrets etc
+push to deploy
+
+
 docs : https://docs.github.com/en/actions/use-cases-and-examples/deploying/deploying-python-to-azure-app-service
+
+# Render 
+For next testing (spiler -> too easy)

@@ -1,7 +1,7 @@
 name: FastApi build and deploy to Azure Web app
 
 env:
-  AZURE_WEBAPP_NAME: boe-chatbot-backend    
+  AZURE_WEBAPP_NAME: test-fastapi-app-kokeitor
   PYTHON_VERSION: '3.11' 
   STARTUP_COMMAND: 'gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.main:app --bind 0.0.0.0:$PORT'
   WORKING_DIRECTORY: '.'
@@ -74,6 +74,7 @@ jobs:
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'test-fastapi-app-kokeitor'
+          app-name: ${{env.AZURE_WEBAPP_NAME}}
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7B921AFD304D4827972ABA4FF56E69AA }}
+          startup-command: ${{ env.STARTUP_COMMAND }}
