@@ -21,3 +21,8 @@ async def root():
 @app.get("/insultar")
 async def insultoEndPoint(insulto: str):
     return {"insulto": f"Eres un poco {insulto}"}
+
+
+@app.get("/elogiar/{elogio}")
+async def insultoEndPoint(elogio: str):
+    return {"insulto": f"Eres un poco {elogio}"}
