@@ -16,3 +16,8 @@ app.add_middleware(
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
+
+
+@app.get("/insultar")
+async def insultoEndPoint(insulto: str):
+    return {"insulto": f"Eres un poco {insulto}"}
